@@ -1,38 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SIR Disease Simulator SPA
 
-## Getting Started
+This is a Single Page Application built with Next.js that simulates the spread of a disease using the SIR model. The application uses Tailwind CSS for the UI and three.js to create the simulation visual.
 
-First, run the development server:
+## Implementation Details
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The simulation uses the SIR (Susceptible-Infected-Recovered) model to simulate the spread of the disease. The simulation takes place in a closed environment with a set population of agents, each agent can be one of these three states. An S agent can be converted to the I state by coming into contact with another agent with I status. There is a probability each time an S agent is in a certain radius of an I agent if it will get infected. Once an I agent has spent a certain amount of time in this state, it transitions to R state where it cannot be moved to I state again.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The UI is built using Tailwind CSS, and the simulation visual is created using three.js. The application allows you to control parameters such as infectivity radius, speed of agent movement, probability of infection, and size of the population. You can save run configurations and store a history of previous runs of the simulation. Additionally, a graph is displayed showing the relationship between agents in different SIR states.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Acknowledgements
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project was primarily created by GPT-4. In fact, this README is written by GPT-4.
